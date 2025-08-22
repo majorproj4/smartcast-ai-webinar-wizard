@@ -1,9 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Link } from "react-router-dom";
+import { useAuth } from "@/contexts/AuthContext";
 import { Bot, Zap, Users } from "lucide-react";
 import heroImage from "@/assets/hero-webinar.jpg";
 
 export const Hero = () => {
+  const { user } = useAuth();
+  
   return (
     <section className="min-h-screen flex items-center pt-16 gradient-dark">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -22,13 +26,21 @@ export const Hero = () => {
               </p>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="hero" size="lg" className="shadow-glow">
-                Start Free Trial
-              </Button>
-              <Button variant="outline" size="lg">
-                Watch Demo
-              </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              {user ? (
+                <Button size="lg" variant="hero" className="text-lg px-8" asChild>
+                  <Link to="/account">Go to Dashboard</Link>
+                </Button>
+              ) : (
+                <>
+                  <Button size="lg" variant="hero" className="text-lg px-8" asChild>
+                    <Link to="/pricing">Start Free Trial</Link>
+                  </Button>
+                  <Button size="lg" variant="outline" className="text-lg px-8">
+                    Watch Demo
+                  </Button>
+                </>
+              )}
             </div>
             
             <div className="flex items-center gap-8 text-sm text-muted-foreground">
