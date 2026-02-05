@@ -102,11 +102,11 @@
   }
 
   .glass-premium {
-    @apply backdrop-blur-2xl bg-gradient-to-br from-white/8 to-white/3 border border-white/20 shadow-card;
+    @apply backdrop-blur-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 shadow-card;
   }
 
   .glass-premium-hover {
-    @apply glass-premium hover:from-white/12 hover:to-white/5 hover:border-white/30 hover:shadow-elevated transition-smooth;
+    @apply glass-premium hover:from-white/20 hover:to-white/10 hover:border-white/30 hover:shadow-elevated transition-smooth;
   }
 
   /* Gradient utilities */
