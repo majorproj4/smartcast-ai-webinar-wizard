@@ -2,86 +2,80 @@
 @tailwind components;
 @tailwind utilities;
 
-/* SmartCast Design System - Professional AI Webinar Platform */
+/* Premium Developer Portfolio Design System */
 
 @layer base {
   :root {
-    /* Core Black Theme */
-    --background: 0 0% 3%;
+    /* Core - Deep black with precision grays */
+    --background: 0 0% 2%;
     --foreground: 0 0% 98%;
 
-    /* Cards & Surfaces */
-    --card: 0 0% 6%;
-    --card-foreground: 0 0% 95%;
+    /* Cards & Surfaces - Glassmorphic layers */
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 96%;
 
-    --popover: 0 0% 4%;
+    --popover: 0 0% 8%;
     --popover-foreground: 0 0% 98%;
 
-    /* Primary - Electric Blue for AI/Tech feel */
-    --primary: 217 91% 60%;
+    /* Primary - Subtle blue-grey for premium feel */
+    --primary: 200 100% 50%;
     --primary-foreground: 0 0% 2%;
-    --primary-glow: 217 91% 70%;
+    --primary-glow: 200 100% 60%;
 
-    /* Secondary - Subtle grays */
+    /* Secondary - Refined neutrals */
     --secondary: 0 0% 12%;
-    --secondary-foreground: 0 0% 90%;
+    --secondary-foreground: 0 0% 92%;
 
-    /* Muted - For subtle elements */
-    --muted: 0 0% 8%;
-    --muted-foreground: 0 0% 65%;
+    /* Muted - For secondary text and subtle elements */
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 60%;
 
-    /* Accent - Bright accent for interactions */
-    --accent: 142 76% 36%;
+    /* Accent - Emerald for success states and highlights */
+    --accent: 160 84% 39%;
     --accent-foreground: 0 0% 98%;
 
     /* Status colors */
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
     
-    --success: 142 76% 36%;
+    --success: 160 84% 39%;
     --success-foreground: 0 0% 98%;
     
     --warning: 48 96% 53%;
     --warning-foreground: 0 0% 2%;
 
     /* Interface elements */
-    --border: 0 0% 15%;
-    --input: 0 0% 10%;
-    --ring: 217 91% 60%;
+    --border: 0 0% 12%;
+    --input: 0 0% 8%;
+    --ring: 200 100% 50%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
     
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-dark: linear-gradient(135deg, hsl(0 0% 2%), hsl(0 0% 8%));
-    --gradient-card: linear-gradient(135deg, hsl(0 0% 4%), hsl(0 0% 7%));
+    /* Gradients - Subtle and sophisticated */
+    --gradient-primary: linear-gradient(135deg, hsl(200 100% 50%), hsl(200 100% 60%));
+    --gradient-dark: linear-gradient(135deg, hsl(0 0% 2%), hsl(0 0% 6%));
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 5%), hsl(0 0% 8%));
+    --gradient-glass: linear-gradient(135deg, hsl(0 0% 8% / 0.5), hsl(0 0% 12% / 0.3));
     
     /* Shadows & Effects */
-    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.3);
-    --shadow-card: 0 4px 20px hsl(0 0% 0% / 0.3);
-    --shadow-soft: 0 2px 10px hsl(0 0% 0% / 0.2);
+    --shadow-glow: 0 0 30px hsl(200 100% 50% / 0.2);
+    --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.4);
+    --shadow-soft: 0 2px 8px hsl(0 0% 0% / 0.3);
+    --shadow-elevated: 0 16px 48px hsl(0 0% 0% / 0.3);
     
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-
-    --radius: 0.75rem;
+    --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 200 100% 50%;
   }
 }
 
@@ -96,7 +90,16 @@
 }
 
 @layer components {
-  /* Component variants using design system */
+  /* Glassmorphic cards with backdrop blur */
+  .glass {
+    @apply backdrop-blur-xl bg-white/5 border border-white/10;
+  }
+
+  .glass-hover {
+    @apply glass hover:bg-white/10 hover:border-white/20 transition-smooth;
+  }
+
+  /* Gradient utilities */
   .gradient-primary {
     background: var(--gradient-primary);
   }
@@ -108,7 +111,12 @@
   .gradient-card {
     background: var(--gradient-card);
   }
+
+  .gradient-glass {
+    background: var(--gradient-glass);
+  }
   
+  /* Shadow utilities */
   .shadow-glow {
     box-shadow: var(--shadow-glow);
   }
@@ -117,11 +125,93 @@
     box-shadow: var(--shadow-card);
   }
   
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+  
+  /* Transition utilities */
   .transition-smooth {
     transition: var(--transition-smooth);
   }
   
   .transition-bounce {
     transition: var(--transition-bounce);
+  }
+
+  .transition-fast {
+    transition: var(--transition-fast);
+  }
+
+  /* Text utilities */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+
+  /* Animations */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% { box-shadow: 0 0 30px hsl(200 100% 50% / 0.2); }
+    50% { box-shadow: 0 0 40px hsl(200 100% 50% / 0.4); }
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animation-delay-1000 {
+    animation-delay: 1s;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  .animation-delay-3000 {
+    animation-delay: 3s;
+  }
+
+  .animate-glow-pulse {
+    animation: glow-pulse 2s ease-in-out infinite;
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(0 0% 5%);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(200 100% 50% / 0.3);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(200 100% 50% / 0.5);
   }
 }

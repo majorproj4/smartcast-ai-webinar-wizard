@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { useAuth } from "@/contexts/AuthContext";
 import { Link } from "react-router-dom";
 import { User, LogOut } from "lucide-react";
+import { useState, useEffect } from "react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,9 +12,18 @@ import {
 
 export const Header = () => {
   const { user, signOut, subscription } = useAuth();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="fixed top-0 w-full z-50 border-b border-border bg-background/80 backdrop-blur-sm">
+    <header className={`fixed top-0 w-full z-50 border-b transition-smooth ${scrolled ? "glass shadow-card" : "border-border bg-background/50 backdrop-blur-sm"}`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center space-x-2">
@@ -24,6 +34,9 @@ export const Header = () => {
           </Link>
           
           <nav className="hidden md:flex items-center space-x-8">
+            <Link to="/portfolio" className="text-muted-foreground hover:text-foreground transition-smooth">
+              Portfolio
+            </Link>
             <a href="#features" className="text-muted-foreground hover:text-foreground transition-smooth">
               Features
             </a>
