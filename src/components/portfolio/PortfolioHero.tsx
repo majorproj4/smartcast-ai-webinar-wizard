@@ -75,7 +75,7 @@ export const PortfolioHero = ({ activeSection, setActiveSection }: PortfolioHero
               {/* Animated role text with better styling */}
               <div className="h-20 flex items-center justify-center">
                 <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-accent blur-2xl opacity-20 rounded-lg"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-accent/30 blur-2xl opacity-20 rounded-lg"></div>
                   <p className="relative text-xl sm:text-2xl lg:text-3xl font-semibold text-primary min-h-16 px-6 py-4">
                     {displayText}
                     <span className="animate-pulse ml-1">|</span>

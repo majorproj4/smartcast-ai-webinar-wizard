@@ -126,7 +126,7 @@ export const PortfolioBuilding = () => {
               ].map((contrib, i) => (
                 <div key={i} className="p-6 rounded-xl border border-white/15 hover:border-primary/50 bg-white/3 hover:bg-white/6 transition-all group text-center">
                   <h4 className="font-bold text-primary mb-3 group-hover:text-accent transition-colors">{contrib.project}</h4>
-                  <p className="text-3xl font-bold mb-2 text-gradient">{contrib.contributions}</p>
+                  <p className="text-3xl font-bold mb-2 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">{contrib.contributions}</p>
                   <p className="text-muted-foreground text-sm">{contrib.role}</p>
                 </div>
               ))}

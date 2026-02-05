@@ -54,7 +54,7 @@ export const PortfolioContact = () => {
 
               {submitted ? (
                 <div className="h-64 flex items-center justify-center text-center">
-                  <div className="space-y-4 animate-scale-in">
+                  <div className="space-y-4">
                     <div className="text-6xl font-bold text-primary">✓</div>
                     <div>
                       <p className="text-xl font-bold mb-2">Thanks for reaching out!</p>
